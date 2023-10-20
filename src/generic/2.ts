@@ -11,7 +11,7 @@ type AllType = {
   weight: number
 }
 
-function compare (top, bottom): AllType {
+function compare <T>(top: T, bottom: T): Object<T> {
   return {
     name: top.name,
     color: top.color,
