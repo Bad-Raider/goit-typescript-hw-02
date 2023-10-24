@@ -8,16 +8,21 @@ type AllType = {
   name: string;
   position: number;
   color: string;
-  weight: number
-}
+  weight: number;
+};
 
-function compare <T>(top: T, bottom: T): Object<T> {
+function compare<T extends AllType>(top: T, bottom: T):AllType {
   return {
     name: top.name,
     color: top.color,
     position: bottom.position,
     weight: bottom.weight,
-  }
+  };
 }
+
+compare(
+  { name: "stas", position: 1, color: "red", weight: 1 },
+  { name: "husiev", position: 2, color: "black", weight: 2 }
+);
 
 export {};
